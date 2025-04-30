@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artistin/Bändin Nimi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background: #f4f4f8; color: #111; }
+    header { background: #3b0764; color: white; padding: 4rem 2rem 2rem; text-align: center; position: relative; }
+    header h1 { font-size: 2.5rem; }
+    header p { font-size: 1.2rem; margin-top: 1rem; }
+    .language-switcher {
+      position: absolute; top: 1rem; right: 1rem;
+    }
+    .language-switcher button {
+      background: transparent; color: white; border: 2px solid white;
+      padding: 0.25rem 0.75rem; margin-left: 0.5rem; border-radius: 5px;
+      cursor: pointer; font-weight: 600;
+    }
+    .artist-image {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      margin: 1rem auto 0; border: 4px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    section { padding: 2rem; max-width: 900px; margin: auto; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .gallery img { width: 100%; border-radius: 8px; }
+    .gallery-description {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #333;
+    }
+    .samples { margin-top: 4rem; }
+    .samples iframe { width: 100%; height: 200px; margin-bottom: 1rem; border: none; }
+    .pricing { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
+    .package {
+      flex: 1 1 calc(33.333% - 1rem); min-width: 250px;
+      background: #fff; border-radius: 10px; padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .package h3 { margin-bottom: 0.5rem; }
+    .contact-info { background: #3b0764; color: white; padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem; }
+    .contact-info p { margin: 0.5rem 0; }
+    footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #555; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .language-switcher { position: static; margin-top: 1rem; }
+      .pricing { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="language-switcher">
+      <button onclick="setLanguage('fi')">Suomeksi</button>
+      <button onclick="setLanguage('en')">In English</button>
+    </div>
+    <img src="https://via.placeholder.com/120" alt="Artisti" class="artist-image">
+    <h1 data-fi="Artistin Nimi" data-en="Artist Name">Artistin Nimi</h1>
+    <p data-fi="Lyhyt kuvaus artistista ja tarjottavista palveluista" data-en="Short description of the artist and offered services">Lyhyt kuvaus artistista ja tarjottavista palveluista</p>
+  </header>
+
+  <section>
+    <h2 data-fi="Esittely" data-en="Image Gallery">Kuvagalleria</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/400x300?text=Kuva+1" alt="Kuva 1">
+      <img src="https://via.placeholder.com/400x300?text=Kuva+2" alt="Kuva 2">
+      <img src="https://via.placeholder.com/400x300?text=Kuva+3" alt="Kuva 3">
+    </div>
+    <p class="gallery-description" data-fi="Artisti on toiminut alalla yli 10 vuotta ja esiintynyt useissa tapahtumissa ympäri Suomea. Referensseihin kuuluu mm. XYZ-festivaali ja ABC-klubi." data-en="The artist has been active for over 10 years and has performed at numerous events across Finland. References include XYZ Festival and ABC Club.">Artisti on toiminut alalla yli 10 vuotta ja esiintynyt useissa tapahtumissa ympäri Suomea. Referensseihin kuuluu mm. XYZ-festivaali ja ABC-klubi.</p>
+
+    <h2 data-fi="Näytteet" data-en="Samples" style="margin-top: 3rem;">Näytteet</h2>
+    <div class="samples">
+      <iframe src="https://open.spotify.com/embed/track/xyz"></iframe>
+      <iframe src="https://www.youtube.com/embed/xyz"></iframe>
+      <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/xyz"></iframe>
+    </div>
+
+    <h2 data-fi="Hinnasto" data-en="Pricing">Hinnasto</h2>
+    <div class="pricing">
+      <div class="package">
+        <h3 data-fi="Duo-keikka + PA" data-en="Duo-gig + PA">Duo-keikka + PA</h3>
+        <p data-fi="Sis. 2-3 x 45min keikan (laulu, syna ja kitara)" data-en="Inc. 2-3 x 45min gig (vocals, synth & guitar)">Sis. keikan 2-3 x 45min (laulut, syna ja kitara)</p>
+        <strong>650 €</strong>
+      </div>
+      <div class="package">
+        <h3 data-fi="4 Hlö bändi + PA" data-en="4 Person band + PA">4 Hlö bändi + PA</h3>
+        <p data-fi="Sis. 2-3 x 45min keikan (basso, kitara, syna, rummut, laulut)" data-en="Inc. 2-3 x 45min gig (vocals, synth, guitar, bass, drums)">Sis. 2-3 x 45min keikan (basso, kitara, syna, rummut, laulut)</p>
+        <strong>1250 €</strong>
+      </div>
+      <div class="package">
+        <h3 data-fi="5 Hlö bändi + valot + iso PA" data-en="5 Person band + lights + bigger PA">5 Hlö bändi + valot + iso PA</h3>
+        <p data-fi="Sis. 2-3 x 45min keikan (basso, 2xkitara, syna, rummut, laulut)" data-en="Inc. 2-3 x 45min gig (vocals, synth, 2xguitars, bass, drums)">Sis. 2-3 x 45min keikan (basso, 2xkitara, syna, rummut, laulut)</p>
+        <strong>1550 €</strong>
+      </div>
+    </div>
+
+    <div class="contact-info">
+      <h2 data-fi="Yhteystiedot" data-en="Contact Info">Yhteystiedot</h2>
+      <p><strong data-fi="Sähköposti:" data-en="Email:">Sähköposti:</strong> artisti@email.com</p>
+      <p><strong data-fi="Puhelin:" data-en="Phone:">Puhelin:</strong> +358 40 123 4567</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 <span data-fi="Artistin Nimi" data-en="Artist Name">Artistin Nimi</span>. <span data-fi="Kaikki oikeudet pidätetään." data-en="All rights reserved.">Kaikki oikeudet pidätetään.</span>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-fi]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+body {
+  background: #f8f9fa;
+  color: #212529;
+  padding-top: 80px;
+}
+header {
+  background: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 60px;
+}
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.language-switcher img {
+  width: 20px;
+  height: 14px;
+}
+.language-switcher select {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  margin-top: 80px;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.price-box {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: background-color 0.3s;
+  position: relative;
+  margin-top: 20px;
+  display: block;
+  width: 30%;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+.step-box {
+  background: #e9f7ef;
+  border-left: 5px solid #28a745;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+.faq {
+  margin-top: 3rem;
+}
+.faq h2 {
+  margin-bottom: 1rem;
+}
+.accordion {
+  margin-bottom: 1rem;
+}
+.accordion input {
+  display: none;
+}
+.accordion label {
+  display: block;
+  background: #e9ecef;
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f1f1f1;
+  padding: 0 1rem;
+  border-radius: 0 0 6px 6px;
+}
+.accordion input:checked ~ .accordion-content {
+  max-height: 200px;
+  padding: 1rem;
+}
+.swiper {
+  width: 100%;
+  height: 80vh;
+  max-height: 1300px; /* added this */
+  margin-bottom: 2rem;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* prevents iframes from spilling out */
+  max-height: 1300px;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: relative;
+}
+.preview-frame {
+  width: 100%;
+  height: 80vh;
+  max-height: 1200px;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+}
+.label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #444;
+}
+.swiper-container {
+position: relative; /* Make sure swiper can be the reference for positioning */
+}
+
+/* Stylish Select Template Button */
+.select-template-button {
+position: absolute;
+bottom: -30px; /* Position it 30px below the swiper */
+left: 50%;
+transform: translateX(-50%); /* Center it horizontally */
+padding: 15px 30px;
+background-color: #007bff; /* Bright blue color */
+color: #fff;
+font-size: 18px;
+font-weight: bold;
+border: none;
+border-radius: 50px; /* Rounded corners for a modern look */
+box-shadow: 0 6px 15px rgba(0, 123, 255, 0.2); /* Subtle shadow */
+cursor: pointer;
+transition: all 0.3s ease;
+z-index: 10; /* Ensure it's above swiper slides */
+}
+
+/* Hover Effect */
+.select-template-button:hover {
+background-color: #0056b3; /* Darker blue on hover */
+box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3); /* More shadow on hover */
+transform: translateX(-50%) scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Focus Effect */
+.select-template-button:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Outline for accessibility */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+.select-template-button {
+font-size: 16px; /* Slightly smaller font for smaller screens */
+padding: 12px 25px; /* Adjust padding */
+}
+}
+form {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+form label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.payment-box {
+  background: #c9f1ce;
+  border-left: 5px solid #43c545;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+.steps-section {
+  margin: 3rem auto;
+  text-align: center;
+}
+.steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+.step {
+  flex: 1;
+  min-width: 100px;
+}
+.circle {
+  width: 60px;
+  height: 60px;
+  background: #1e3a8a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 0.5rem auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.color-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+.color-picker input[type="color"] {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+/* Color Preview Info Box */
+.color-preview-info {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.color-preview-info h3 {
+  margin-top: 0;
+}
+
+.color-preview-info p {
+  margin: 0;
+  color: #555;
+}
+
+/* Color Preview Frame */
+.color-preview-frame {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header section (Top bar with buttons) */
+.color-preview-header {
+  height: 50px;
+  background-color: #007bff; /* Default theme color */
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+/* Buttons inside header */
+.color-preview-button {
+  background-color: #163a61; /* Default button color */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Content (Background section) */
+.color-preview-content {
+  height: 100px;
+  background-color: #f8f9fa; /* Default background color */
+}
+
+/* Footer bar */
+.color-preview-footer {
+  height: 30px;
+  background-color: #007bff; /* Default theme color */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.preview-template-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 20px;
+  background: #f9f9f9;
+}
+.preview-template-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.language-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.checkbox-pill {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px 18px;
+  border-radius: 9999px; /* Extra pill shape */
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.4s ease, color 0.4s ease, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkbox-pill input[type="checkbox"] {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px; /* Spacing between checkbox and text */
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.checkbox-pill .checkbox-text {
+  display: inline-block;
+  padding-left: 30px; /* Ensure enough space for checkbox */
+  line-height: 18px; /* Align text vertically with checkbox */
+  cursor: pointer;
+}
+
+.checkbox-pill::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-pill input[type="checkbox"]:checked + .checkbox-text {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.checkbox-pill input[type="checkbox"]:checked + .checkbox-text::before {
+  background: #fff;
+  border-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23007bff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.285 6.709a1 1 0 00-1.414-1.418l-9.192 9.193-4.243-4.242a1 1 0 00-1.415 1.415l5 5a1 1 0 001.415 0l10-10z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+}
+
+
+.preview-template-thumb {
+  width: 100%;
+  height: 200px;
+  background: #ddd url('https://via.placeholder.com/600x200?text=Template+Preview') center/cover no-repeat;
+  border-radius: 8px;
+}
