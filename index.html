@@ -73,188 +73,179 @@
 
 
 
+<!-- Order Form Section -->
+<section class="order-form-section">
+  <h2 id="orderForm">Order Form</h2>
+  <form action="https://formsubmit.co/easypagehub@gmail.com" method="POST" enctype="multipart/form-data">
+    
+    <!-- Input for selected template -->
+    <label for="Template" id="templateLabel">Selected Template</label>
+    <input type="text" name="Selected Template" id="selectedTemplate" readonly>
 
-  <!-- Order Form Section -->
-  <section class="order-form-section">
-    <h2 id="orderForm">Order Form</h2>
-    <form action="https://formsubmit.co/YOUR_EMAIL@domain.com" method="POST" enctype="multipart/form-data">
+    <!-- Company Name -->
+    <label for="name" id="companyNameLabel">Company Name</label>
+    <input type="text" id="name" name="Company Name" required oninput="updatePreviewText('name', this.value)">
+
+    <!-- Company ID -->
+    <label for="companyId" id="companyIdLabel">Business ID</label>
+    <input type="text" id="companyId" name="Business ID">
+
+    <!-- Additional Information -->
+    <label for="message" id="infoLabel">Slogan (A short description of what the company does)</label>
+    <textarea id="message" name="Preferences" rows="2" required oninput="updatePreviewText('info', this.value)"></textarea>
+
+    <!-- Conditional: Baisc description -->
+    <div id="extraFieldBasic" style="display:none;">
+      <label for="basicMessage" id="basicTextLabel">Company Background</label>
+      <textarea id="basicMessage" name="Company Background" rows="5" placeholder="Describe more about your business and it's background"></textarea>
+    </div>
+
+    <!-- Conditional: Artist description -->
+    <div id="extraFieldArtist" style="display:none;">
+      <label for="artistMessage" id="artistTextLabel">Extended text about the artist</label>
+      <textarea id="artistMessage" name="Extended text about the artist" rows="5" placeholder="To be displayed alongside the image gallery"></textarea>
+    </div>
+
+    <!-- First Name and Last Name -->
+    <label for="fullName" id="fullNameLabel">First Name Last Name</label>
+    <input type="text" id="fullName" name="Full Name" required>
+
+    <!-- Email -->
+    <label for="email" id="emailLabel">Email</label>
+    <input type="email" id="email" name="Email" required>
+
+    <!-- Telephone -->
+    <label for="phone" id="phoneLabel">Phone Number</label>
+    <input type="tel" id="phone" name="Phone Number" required pattern="[0-9+\-\s]+" title="Please enter a valid phone number">
+
+    <!-- Conditional (Simple & Artist): Upload Photos -->
+    <div id="extraFieldPhotoUploadSection" style="display:none;">
+      <label for="photoUpload" id="photoUploadLabel">Upload Photos (max 3 MB each)</label>
+      <input type="file" id="photoUpload" name="Photos" accept="image/*" multiple>
+      <button id="uploadButtonSimpleArtist"></button>
+    </div>
+
+    <!-- Conditional (Basic): Upload Photos -->
+    <div id="extraFieldPhotoUploadSection2" style="display:none;">
+      <label for="photoUpload" id="photoUploadLabelBasic">Upload Photos for Price References (max 3 MB each)</label>
+      <input type="file" id="photoUpload2" name="Photos" accept="image/*" multiple>
       
-      <!-- Input for selected template -->
-      <label for="Template" id="templateLabel">Selected Template</label>
-      <input type="text" name="Selected Template" id="selectedTemplate" readonly>
+      <!-- Container for photo descriptions -->
+      <div id="photoDescriptionContainer"></div>
+      <button id="uploadButtonBasic">Upload Photos</button>
+    </div>
 
-      <!-- Company Name -->
-      <label for="name" id="companyNameLabel">Company Name</label>
-      <input type="text" id="name" name="Company Name" required oninput="updatePreviewText('name', this.value)">
+    <!-- Color Theme -->
+    <div class="color-picker">
+      <label for="mainColor" id="colorThemeText">Choose a color theme:</label>
+      <input type="color" id="mainColor" value="#007bff" oninput="updatePreviewColors(); document.getElementById('colorHex').value = this.value;">
+      <input type="hidden" id="colorHex" name="Color Theme" value="#007bff">
+    </div>
 
-      <!-- Company ID -->
-      <label for="companyId" id="companyIdLabel">Business ID</label>
-      <input type="text" id="companyId" name="Business ID">
+    <!-- Background Color -->
+    <div class="color-picker">
+      <label for="backgroundColor" id="backgroundColorText">Choose a background color:</label>
+      <input type="color" id="backgroundColor" value="#f8f9fa" oninput="updatePreviewColors()">
+    </div>
 
-      <!-- Additional Information -->
-      <label for="message" id="infoLabel">Slogan (A short description of what the company does)</label>
-      <textarea id="message" name="Preferences" rows="2" required oninput="updatePreviewText('info', this.value)"></textarea>
+    <!-- Button Color -->
+    <div class="color-picker">
+      <label for="buttonColor" id="buttonColorText">Choose button color:</label>
+      <input type="color" id="buttonColor" value="#163a61" oninput="updatePreviewColors()">
+    </div>
 
-      <!-- Conditional: Baisc description -->
-      <div id="extraFieldBasic" style="display:none;">
-        <label for="basicMessage" id="basicTextLabel">Company Background</label>
-        <textarea id="basicMessage" name="Company Background" rows="5" placeholder="Describe more about your business and it's background"></textarea>
+    <!-- Color Preview Info Box -->
+    <div class="color-preview-info">
+      <h3 id="colorPreviewLabel1">Color Preview (not final website layout)</h3>
+      <p id="colorPreviewLabel2">This preview helps you visualize your selected colors.</p>
+    </div>
+
+    <!-- Color Preview Frame -->
+    <div id="colorPreview" class="color-preview-frame">
+      <div id="previewHeader" class="color-preview-header">
+        <button id="previewButton1" class="color-preview-button">Send email</button>
+        <button id="previewButton2" class="color-preview-button">Call now</button>
       </div>
+      <div id="previewContent" class="color-preview-content"></div>
+      <div id="previewFooter" class="color-preview-footer"></div>
+    </div>
 
-      <!-- Conditional: Artist description -->
-      <div id="extraFieldArtist" style="display:none;">
-        <label for="artistMessage" id="artistTextLabel">Extended text about the artist</label>
-        <textarea id="artistMessage" name="Extended text about the artist" rows="5" placeholder="To be displayed alongside the image gallery"></textarea>
-      </div>
+    <!-- Facebook -->
+    <label for="facebook" id="facebookLabel">Link to Facebook page (optional)</label>
+    <input type="text" id="fblink" name="Link to Facebook page (optional)" required oninput="updatePreviewText('name', this.value)">
 
-      <!-- First Name and Last Name -->
-      <label for="fullName" id="fullNameLabel">First Name Last Name</label>
-      <input type="text" id="fullName" name="Full Name" required>
+    <!-- Youtube -->
+    <label for="youtube" id="ytLabel">Link to Youtube page (optional)</label>
+    <input type="text" id="ytlink" name="Link to Youtube page (optional)" required oninput="updatePreviewText('name', this.value)">
 
-      <!-- Email -->
-      <label for="email" id="emailLabel">Email</label>
-      <input type="email" id="email" name="Email" required>
+    <!-- Instagram -->
+    <label for="instagram" id="igLabel">Link to Instagram page (optional)</label>
+    <input type="text" id="iglink" name="Link to Instagram page (optional)" required oninput="updatePreviewText('name', this.value)">
 
-      <!-- Telephone -->
-      <label for="phone" id="phoneLabel">Phone Number</label>
-      <input type="tel" id="phone" name="Phone Number" required pattern="[0-9+\-\s]+" title="Please enter a valid phone number">
+    <!-- Spotify -->
+    <label for="spotify" id="spotifyLabel">Link to Spotify page (optional)</label>
+    <input type="text" id="name" name="Link to Spotify page (optional)" required oninput="updatePreviewText('name', this.value)">
+    
+    <!-- Language selection -->
+    <label for="languages" id="selectLangLabel">Select languages (Content will be translated by AI for all selected languages):</label>      
+    
+    <div class="language-selection">
+      <label class="checkbox-pill">
+        <input type="checkbox" id="fin" value="fi">
+        <span id="label-fin" class="checkbox-text">Finnish</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="swe" value="sv">
+        <span id="label-swe" class="checkbox-text">Swedish</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="nor" value="no">
+        <span id="label-nor" class="checkbox-text">Norwegian</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="eng" value="en">
+        <span id="label-eng" class="checkbox-text">English</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="spa" value="es">
+        <span id="label-spa" class="checkbox-text">Spanish</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="ita" value="it">
+        <span id="label-ita" class="checkbox-text">Italian</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="fre" value="fr">
+        <span id="label-fre" class="checkbox-text">French</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="est" value="et">
+        <span id="label-est" class="checkbox-text">Estonian</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="lat" value="lv">
+        <span id="label-lat" class="checkbox-text">Latvian</span>
+      </label>
+    
+      <label class="checkbox-pill">
+        <input type="checkbox" id="lit" value="lt">
+        <span id="label-lit" class="checkbox-text">Lithuanian</span>
+      </label>
+    </div>
 
-      <!-- Conditional (Simple & Artist): Upload Photos -->
-      <div id="extraFieldPhotoUploadSection" style="display:none;">
-        <label for="photoUpload" id="photoUploadLabel">Upload Photos (max 3 MB each)</label>
-        <input type="file" id="photoUpload" name="Photos" accept="image/*" multiple>
-        <button id="uploadButtonSimpleArtist"></button>
-      </div>
+    <!-- Submit Button -->
+    <button type="submit" class="cta-button" id="sendOrder">Send Order</button>
+  </form>
+</section>
 
-      <!-- Conditional (Basic): Upload Photos -->
-      <div id="extraFieldPhotoUploadSection2" style="display:none;">
-        <label for="photoUpload" id="photoUploadLabelBasic">Upload Photos for Price References (max 3 MB each)</label>
-        <input type="file" id="photoUpload2" name="Photos" accept="image/*" multiple>
-        
-        <!-- Container for photo descriptions -->
-        <div id="photoDescriptionContainer"></div>
-        <button id="uploadButtonBasic">Upload Photos</button>
-      </div>
-
-
-      <!-- Color Theme -->
-      <div class="color-picker">
-        <label for="mainColor" id="colorThemeText">Choose a color theme:</label>
-        <input type="color" id="mainColor" value="#007bff" oninput="updatePreviewColors(); document.getElementById('colorHex').value = this.value;">
-        <input type="hidden" id="colorHex" name="Color Theme" value="#007bff">
-      </div>
-
-      <!-- Background Color -->
-      <div class="color-picker">
-        <label for="backgroundColor" id="backgroundColorText">Choose a background color:</label>
-        <input type="color" id="backgroundColor" value="#f8f9fa" oninput="updatePreviewColors()">
-      </div>
-
-      <!-- Button Color -->
-      <div class="color-picker">
-        <label for="buttonColor" id="buttonColorText">Choose button color:</label>
-        <input type="color" id="buttonColor" value="#163a61" oninput="updatePreviewColors()">
-      </div>
-
-      <!-- Color Preview Info Box -->
-      <div class="color-preview-info">
-        <h3 id="colorPreviewLabel1">Color Preview (not final website layout)</h3>
-        <p id="colorPreviewLabel2">This preview helps you visualize your selected colors.</p>
-      </div>
-
-      <!-- Color Preview Frame -->
-      <div id="colorPreview" class="color-preview-frame">
-        <div id="previewHeader" class="color-preview-header">
-          <button id="previewButton1" class="color-preview-button">Send email</button>
-          <button id="previewButton2" class="color-preview-button">Call now</button>
-        </div>
-        <div id="previewContent" class="color-preview-content"></div>
-        <div id="previewFooter" class="color-preview-footer"></div>
-      </div>
-
-      <!-- Facebook -->
-      <label for="facebook" id="facebookLabel">Link to Facebook page (optional)</label>
-      <input type="text" id="fblink" name="Link to Facebook page (optional)" required oninput="updatePreviewText('name', this.value)">
-
-      <!-- Youtube -->
-      <label for="youtube" id="ytLabel">Link to Youtube page (optional)</label>
-      <input type="text" id="ytlink" name="Link to Youtube page (optional)" required oninput="updatePreviewText('name', this.value)">
-
-      <!-- Instagram -->
-      <label for="instagram" id="igLabel">Link to Instagram page (optional)</label>
-      <input type="text" id="iglink" name="Link to Instagram page (optional)" required oninput="updatePreviewText('name', this.value)">
-
-      <!-- Spotify -->
-      <label for="spotify" id="spotifyLabel">Link to Spotify page (optional)</label>
-      <input type="text" id="name" name="Link to Spotify page (optional)" required oninput="updatePreviewText('name', this.value)">
-      
-      <!-- Language selection -->
-      <label for="languages" id="selectLangLabel">Select languages (Content will be translated by AI for all selected languages):</label>      
-      
-      <div class="language-selection">
-        <label class="checkbox-pill">
-          <input type="checkbox" id="fin" value="fi">
-          <span id="label-fin" class="checkbox-text">Finnish</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="swe" value="sv">
-          <span id="label-swe" class="checkbox-text">Swedish</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="nor" value="no">
-          <span id="label-nor" class="checkbox-text">Norwegian</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="eng" value="en">
-          <span id="label-eng" class="checkbox-text">English</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="spa" value="es">
-          <span id="label-spa" class="checkbox-text">Spanish</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="ita" value="it">
-          <span id="label-ita" class="checkbox-text">Italian</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="fre" value="fr">
-          <span id="label-fre" class="checkbox-text">French</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="est" value="et">
-          <span id="label-est" class="checkbox-text">Estonian</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="lat" value="lv">
-          <span id="label-lat" class="checkbox-text">Latvian</span>
-        </label>
-      
-        <label class="checkbox-pill">
-          <input type="checkbox" id="lit" value="lt">
-          <span id="label-lit" class="checkbox-text">Lithuanian</span>
-        </label>
-      </div>
-      
-      
-           
-      
-      
-
-      <!-- Preview Button -->
-      <!-- <button type="button" onclick="showPreview()">Preview Website</button>-->
-
-      <!-- Submit Button -->
-      <button type="submit" class="cta-button" id="sendOrder">Send Order</button>
-    </form>
-  </section>
 
 
 
