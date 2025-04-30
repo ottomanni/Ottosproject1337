@@ -455,3 +455,17 @@ form textarea {
   background: #ddd url('https://via.placeholder.com/600x200?text=Template+Preview') center/cover no-repeat;
   border-radius: 8px;
 }
+
+.site-footer {
+  background-color: white
+  color: #111;               /* musta teksti */
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 16px;
+}
+
+.site-footer a {
+  color: #111;               /* linkki mustana */
+  text-decoration: underline;
+  font-weight: 500;
+}

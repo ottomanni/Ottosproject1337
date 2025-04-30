@@ -2,7 +2,7 @@
 const translations = {
   en: {
     headline: "Get your business online – fast, easy and affordable",
-    price: "Available within about a day of the order. Annual fee: <strong>€189</strong> / year <br/>Includes setup, 1 domain, annual color/text changes, and website maintenance.",
+    price: "Available within about a day of the order. Annual fee: <strong>€189</strong> / year <br/>Includes setup, 1 domain, annual text/color changes, and website maintenance.",
     howItWorks: "How it works",
     step1: "Choose your favorite template",
     step2: "Fill out the order form",
@@ -38,7 +38,7 @@ const translations = {
     spotifyLabel: "Link to Spotify page (optional)",
     sendOrder: "Send Order",
     paymentTitle: "Payment",
-    paymentInfo: "You will receive an invoice by email after the order (€189 / year). Your website will be published after payment.",
+    paymentInfo: "You will receive a demo preview and an invoice by email after placing the order (€189/year). Your website will be published to your selected domain after the payment is received.",
     faqTitle: "Frequently Asked Questions",
     faq1Label: "How does the order work?",
     faq1Content: "Send us an email – we’ll take care of the rest! We only need your business name and preferences.",
@@ -58,11 +58,13 @@ const translations = {
     photoUploadLabelSimpleArtist: "Upload Photos (max 3 MB each)",
     uploadButtonSimpleArtist: "Upload Photos",
     photoUploadLabelBasic: "Upload Photos for Price References (max 3 MB each)",
-    uploadButtonBasic: "Upload Photos"
+    uploadButtonBasic: "Upload Photos",
+    footerCopyRight: "All rights reserved.",
+    footerAskMore: "Ask more:"
   },
   fi: {
     headline: "Kotisivut yrityksellesi - nopeasti, edullisesti ja helposti",
-    price: "Saatavilla noin vuorokauden kuluessa tilauksesta. Vuosimaksu: <strong>€189</strong> / vuosi <br/>Sisältää käyttöönoton, 1 verkkotunnuksen, vuosittaiset väri/tekstimuutokset ja ylläpidon.",
+    price: "Saatavilla noin vuorokauden kuluessa tilauksesta. Vuosimaksu: <strong>€189</strong> / vuosi <br/>Sisältää käyttöönoton, 1 verkkotunnuksen, vuosittaiset teksti-/värimuutokset ja ylläpidon.",
     howItWorks: "Näin se toimii",
     step1: "Valitse suosikkimallipohjasi",
     step2: "Täytä tilauslomake",
@@ -98,7 +100,7 @@ const translations = {
     spotifyLabel: "Linkki Spotify-sivulle (valinnainen)",
     sendOrder: "Lähetä tilaus",
     paymentTitle: "Maksu",
-    paymentInfo: "Saat laskun sähköpostitse tilauksen jälkeen (€189 / vuosi). Sivustosi julkaistaan maksun jälkeen.",
+    paymentInfo: "Saat demo sivun esikatselua varten ja laskun sähköpostitse tilauksen jälkeen (189 €/vuosi). Verkkosivustosi julkaistaan valitsemaasi osoitteesee maksun jälkeen.",
     faqTitle: "Usein kysyttyä",
     faq1Label: "Miten tilaus toimii?",
     faq1Content: "Lähetä meille sähköpostia – hoidamme loput! Tarvitsemme vain yrityksesi nimen ja toiveesi.",
@@ -118,6 +120,8 @@ const translations = {
     photoUploadLabelSimpleArtist: "Lisää esittelykuvat (max 3 MB/kuva)",
     uploadButtonSimpleArtist: "Lataa kuvat",
     photoUploadLabelBasic: "Lisää hintareferenssien kuvat (max 3 MB/kuva)",
-    uploadButtonBasic: "Lataa kuvat"
+    uploadButtonBasic: "Lataa kuvat",
+    footerCopyRight: "Kaikki oikeudet pidätetään.",
+    footerAskMore: "Kysy lisää:"
   }
 };
